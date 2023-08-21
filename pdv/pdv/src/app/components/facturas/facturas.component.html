@@ -1,0 +1,79 @@
+<!-- <div class="container">
+  <h2>Formulario de Facturas</h2>
+  <form>
+    <div class="mb-3">
+      <label for="id_cliente" class="form-label">ID Cliente</label>
+      <input type="number" class="form-control" id="id_cliente" [(ngModel)]="facturas.id_cliente" name="id_cliente">
+    </div>
+    <div class="mb-3">
+      <label for="id_venta" class="form-label">ID Venta</label>
+      <input type="number" class="form-control" id="id_venta" [(ngModel)]="facturas.id_venta" name="id_venta">
+    </div>
+    <div class="mb-3">
+      <label for="total" class="form-label">Total</label>
+      <input type="number" class="form-control" id="total" [(ngModel)]="facturas.total" name="total">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="agregarFactura()">Agregar Factura</button>
+  </form> -->
+  <h2>Formulario de facturas</h2>
+<br>
+  <form (submit)="agregarFactura()">
+    <label for="id_cliente" class="form-label">ID Cliente</label>
+      <input type="number" class="form-control" id="id_cliente" [(ngModel)]="facturas.id_cliente" name="id_cliente">
+  
+      <label for="id_venta" class="form-label">ID Venta</label>
+      <input type="number" class="form-control" id="id_venta" [(ngModel)]="facturas.id_venta" name="id_venta">
+
+      <label for="total" class="form-label">Total</label>
+      <input type="number" class="form-control" id="total" [(ngModel)]="facturas.total" name="total">
+  
+    <button type="submit">Agregar Factura</button>
+  </form>
+
+  <table>
+    <tr>
+      <th>ID Factura</th>
+        <th>ID Cliente</th>
+        <th>ID Venta</th>
+        <th>Total</th>
+        <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let factura of factura">
+      <td>{{ factura.id_factura }}</td>
+        <td>{{ factura.id_cliente }}</td>
+        <td>{{ factura.id_venta }}</td>
+        <td>{{ factura.total }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="actualizarFactura(factura.id_factura)">Actualizar</button>
+        <button class="btn btn-danger" (click)="eliminarFactura(factura.id_factura)">Eliminar</button>
+  
+      </td>
+    </tr>
+  </table>
+  
+<!-- 
+  <h2>Facturas</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID Factura</th>
+        <th>ID Cliente</th>
+        <th>ID Venta</th>
+        <th>Total</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let factura of factura">
+        <td>{{ factura.id_factura }}</td>
+        <td>{{ factura.id_cliente }}</td>
+        <td>{{ factura.id_venta }}</td>
+        <td>{{ factura.total }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="actualizarFactura(factura.id_factura)">Actualizar</button>
+          <button class="btn btn-danger" (click)="eliminarFactura(factura.id_factura)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ -->

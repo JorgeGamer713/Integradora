@@ -1,0 +1,78 @@
+<!-- <div class="container">
+  <h2>Formulario de Ventas</h2>
+  <form>
+    <div class="mb-3">
+      <label for="fecha" class="form-label">Fecha</label>
+      <input type="date" class="form-control" id="fecha" [(ngModel)]="ventas.fecha" name="fecha">
+    </div>
+    <div class="mb-3">
+      <label for="id_usuario" class="form-label">ID Usuario</label>
+      <input type="number" class="form-control" id="id_usuario" [(ngModel)]="ventas.id_usuario" name="id_usuario">
+    </div>
+    <div class="mb-3">
+      <label for="monto" class="form-label">Monto</label>
+      <input type="number" class="form-control" id="monto" [(ngModel)]="ventas.monto" name="monto">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="agregarVenta()">Agregar Venta</button>
+  </form> -->
+  <h2>Formulario de Ventas</h2>
+  <br>
+
+  <form (submit)="agregarVenta()">
+    <label for="fecha" class="form-label">Fecha</label>
+      <input type="date" class="form-control" id="fecha" [(ngModel)]="ventas.fecha" name="fecha">
+
+      <label for="id_usuario" class="form-label">ID Usuario</label>
+      <input type="number" class="form-control" id="id_usuario" [(ngModel)]="ventas.id_usuario" name="id_usuario">
+
+      <label for="monto" class="form-label">Monto</label>
+      <input type="number" class="form-control" id="monto" [(ngModel)]="ventas.monto" name="monto">
+  
+    <button type="submit">Agregar Venta</button>
+  </form>
+
+  <table>
+    <tr>
+      <th>ID Venta</th>
+      <th>Fecha</th>
+      <th>ID Usuario</th>
+      <th>Monto</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let v of venta">
+      <td>{{ v.id_venta }}</td>
+      <td>{{ v.fecha }}</td>
+      <td>{{ v.id_usuario }}</td>
+      <td>{{ v.monto }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="actualizarVenta(v.id_venta)">Actualizar</button>
+        <button class="btn btn-danger" (click)="eliminarVenta(v.id_venta)">Eliminar</button>
+      </td>
+    </tr>
+  </table>
+
+  <!-- <h2>Ventas</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID Venta</th>
+        <th>Fecha</th>
+        <th>ID Usuario</th>
+        <th>Monto</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of venta">
+        <td>{{ v.id_venta }}</td>
+        <td>{{ v.fecha }}</td>
+        <td>{{ v.id_usuario }}</td>
+        <td>{{ v.monto }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="actualizarVenta(v.id_venta)">Actualizar</button>
+          <button class="btn btn-danger" (click)="eliminarVenta(v.id_venta)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+

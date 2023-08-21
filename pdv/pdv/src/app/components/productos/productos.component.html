@@ -1,0 +1,64 @@
+<h2>Formulario de Productos</h2>
+<br>
+
+<form (submit)="agregarProducto()">
+  <label for="descripcion">Descripción:</label>
+  <input type="text" id="descripcion" [(ngModel)]="producto.descripcion" name="descripcion"><br>
+
+  <label for="id_proveedor">ID Proveedor:</label>
+  <input type="number" id="id_proveedor" [(ngModel)]="producto.id_proovedor" name="id_proveedor"><br>
+
+  <select  id="proveedor" [(ngModel)]="productosService.producto.proveedor" name="proveedor"> 
+    <option *ngFor="let item of provedoresService.provedores" [value]="item.proveedor" >
+        {{item.proveedor}}
+        
+
+      </option>
+    </select>
+
+  <label for="id_categoria">ID Categoría:</label>
+  <input type="number" id="id_categoria" [(ngModel)]="producto.id_categoria" name="id_categoria"><br>
+  <select >
+    <option *ngFor=" let item of this.categorias">
+      
+    </option>
+  </select>
+
+  <label for="precio_unit">Precio Unitario:</label>
+  <input type="number" id="precio_unit" [(ngModel)]="producto.precio_unit" name="precio_unit"><br>
+
+  <label for="existencias">Existencias:</label>
+  <input type="number" id="existencias" [(ngModel)]="producto.existencias" name="existencias"><br>
+
+  <label for="stock_minimo">Stock Mínimo:</label>
+  <input type="number" id="stock_minimo" [(ngModel)]="producto.stock_minimo" name="stock_minimo"><br>
+
+  <button type="submit">Agregar Producto</button>
+</form>
+
+<table>
+  <tr>
+    <th>ID Producto</th>
+    <th>Descripción</th>
+    <th>ID Proveedor</th>
+    <th>Provedor</th>
+    <th>ID Categoría</th>
+    <th>Precio Unitario</th>
+    <th>Existencias</th>
+    <th>Stock Mínimo</th>
+    <th>Acciones</th>
+  </tr>
+  <tr *ngFor="let prod of productos">
+    <td>{{ prod.id_producto }}</td>
+    <td>{{ prod.descripcion }}</td>
+    <td>{{ prod.id_proovedor }}</td>
+    <td>{{prod.proveedor}}</td>
+    <td>{{ prod.id_categoria }}</td>
+    <td>{{ prod.precio_unit }}</td>
+    <td>{{ prod.existencias }}</td>
+    <td>{{ prod.stock_minimo }}</td>
+    <td>
+      <button (click)="eliminarProducto(prod.id_producto)">Eliminar</button>
+    </td>
+  </tr>
+</table>

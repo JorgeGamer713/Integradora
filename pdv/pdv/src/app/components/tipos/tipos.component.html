@@ -1,0 +1,57 @@
+<!-- <div class="container">
+  <h2>Formulario de Tipos</h2>
+  <form>
+    <div class="mb-3">
+      <label for="tipo" class="form-label">Tipo</label>
+      <input type="text" class="form-control" id="tipo" [(ngModel)]="tipos.tipo" name="tipo">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="agregarTipo()">Agregar Tipo</button>
+  </form> -->
+  <h2>Formulario de tipos</h2>
+  <br>
+
+  <form (submit)="agregarTipo()">
+    <label for="tipo" class="form-label">Tipo</label>
+      <input type="text" class="form-control" id="tipo" [(ngModel)]="tipos.tipo" name="tipo">
+  
+    <button type="submit">Agregar Tipo</button>
+  </form>
+
+  <table>
+    <tr>
+      <th>ID Tipo</th>
+        <th>Tipo</th>
+        <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let t of tipo">
+      <td>{{ t.id_tipo }}</td>
+      <td>{{ t.tipo }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="actualizarTipo(t.id_tipo)">Actualizar</button>
+        <button class="btn btn-danger" (click)="eliminarTipo(t.id_tipo)">Eliminar</button>
+      </td>
+    </tr>
+  </table>
+
+
+<!--   <h2>Tipos</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID Tipo</th>
+        <th>Tipo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of tipo">
+        <td>{{ t.id_tipo }}</td>
+        <td>{{ t.tipo }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="actualizarTipo(t.id_tipo)">Actualizar</button>
+          <button class="btn btn-danger" (click)="eliminarTipo(t.id_tipo)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+

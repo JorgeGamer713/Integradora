@@ -1,0 +1,79 @@
+<!-- <div class="container">
+  <h2>Formulario de Proveedores</h2>
+  <form>
+    <div class="mb-3">
+      <label for="proveedor" class="form-label">Proveedor</label>
+      <input type="text" class="form-control" id="proveedor" [(ngModel)]="proveedore.proveedor" name="proveedor">
+    </div>
+    <div class="mb-3">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input type="text" class="form-control" id="telefono" [(ngModel)]="proveedore.telefono" name="telefono">
+    </div>
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo</label>
+      <input type="email" class="form-control" id="correo" [(ngModel)]="proveedore.correo" name="correo">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="agregarProveedor()">Agregar Proveedor</button>
+  </form> -->
+  <h2>Formulario de proveedores</h2>
+  <br>
+
+  <form (submit)="agregarProveedor()">
+    <label for="proveedor" class="form-label">Proveedor</label>
+    <input type="text" class="form-control" id="proveedor" [(ngModel)]="proveedore.proveedor" name="proveedor">
+  
+    <label for="telefono" class="form-label">Teléfono</label>
+    <input type="text" class="form-control" id="telefono" [(ngModel)]="proveedore.telefono" name="telefono">
+
+    <label for="correo" class="form-label">Correo</label>
+    <input type="email" class="form-control" id="correo" [(ngModel)]="proveedore.correo" name="correo">
+  
+    <button type="submit">Agregar Proveedor</button>
+  </form>
+
+  <table>
+    <tr>
+      <th>ID Proveedor</th>
+      <th>Proveedor</th>
+      <th>Teléfono</th>
+      <th>Correo</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let prov of proveedor">
+      <td>{{ prov.id_proovedor }}</td>
+      <td>{{ prov.proveedor }}</td>
+      <td>{{ prov.telefono }}</td>
+      <td>{{ prov.correo }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="actualizarProveedor(prov.id_proovedor)">Actualizar</button>
+        <button class="btn btn-danger" (click)="eliminarProveedor(prov.id_proovedor)">Eliminar</button>
+      </td>
+    </tr>
+  </table>
+
+
+<!--   <h2>Proveedores</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID Proveedor</th>
+        <th>Proveedor</th>
+        <th>Teléfono</th>
+        <th>Correo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prov of proveedor">
+        <td>{{ prov.id_proovedor }}</td>
+        <td>{{ prov.proveedor }}</td>
+        <td>{{ prov.telefono }}</td>
+        <td>{{ prov.correo }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="actualizarProveedor(prov.id_proovedor)">Actualizar</button>
+          <button class="btn btn-danger" (click)="eliminarProveedor(prov.id_proovedor)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+

@@ -1,0 +1,75 @@
+<!-- <div class="container">
+  <h2>Formulario de Usuarios</h2>
+  <form>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" [(ngModel)]="usuarios.nombre" name="nombre">
+    </div>
+    <div class="mb-3">
+      <label for="id_tipo" class="form-label">ID Tipo</label>
+      <input type="number" class="form-control" id="id_tipo" [(ngModel)]="usuarios.id_tipo" name="id_tipo">
+    </div>
+    <div class="mb-3">
+      <label for="pwd" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="pwd" [(ngModel)]="usuarios.pwd" name="pwd">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="agregarUsuario()">Agregar Usuario</button>
+  </form> -->
+
+  <h2>Formulario de usuarios</h2>
+  <br>
+  <form (submit)="agregarUsuario()">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="nombre" [(ngModel)]="usuarios.nombre" name="nombre">
+
+    <label for="id_tipo" class="form-label">ID Tipo</label>
+      <input type="number" class="form-control" id="id_tipo" [(ngModel)]="usuarios.id_tipo" name="id_tipo">
+
+      <label for="pwd" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="pwd" [(ngModel)]="usuarios.pwd" name="pwd">
+  
+    <button type="submit">Agregar Usuario</button>
+  </form>
+
+  <table>
+    <tr>
+      <th>ID Usuario</th>
+      <th>Nombre</th>
+      <th>ID Tipo</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let u of usuario">
+      <td>{{ u.id_usuario }}</td>
+      <td>{{ u.nombre }}</td>
+      <td>{{ u.id_tipo }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="actualizarUsuario(u.id_usuario)">Actualizar</button>
+          <button class="btn btn-danger" (click)="eliminarUsuario(u.id_usuario)">Eliminar</button>
+      </td>
+    </tr>
+  </table>
+
+
+<!--   <h2>Usuarios</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID Usuario</th>
+        <th>Nombre</th>
+        <th>ID Tipo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of usuario">
+        <td>{{ u.id_usuario }}</td>
+        <td>{{ u.nombre }}</td>
+        <td>{{ u.id_tipo }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="actualizarUsuario(u.id_usuario)">Actualizar</button>
+          <button class="btn btn-danger" (click)="eliminarUsuario(u.id_usuario)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ -->

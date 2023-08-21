@@ -1,0 +1,286 @@
+// Categorías
+### Consultando todos los categoria general
+GET http://localhost:3000/categorias
+
+### Consultando todos los categoria por id
+GET http://localhost:3000/categoria/1
+
+### Insertando categoria
+POST http://localhost:3000/categorias
+Content-Type: application/json
+
+### Actualizando un categoria
+PUT http://localhost:3000/categoria/
+Content-Type: application/json
+
+### Eliminando un categoria
+DELETE http://localhost:3000/categoria/6
+
+///////////////////////////////////////////////////////////////////////////////////
+
+// Clientes
+### Consultando todos los clientes general
+GET http://localhost:3000/clientes
+
+### Consultando todos los clientes por id
+GET http://localhost:3000/clientes/1
+
+### Insertando clientes
+POST http://localhost:3000/clientes
+Content-Type: application/json
+
+### Actualizando un clientes
+PUT http://localhost:3000/clientes/
+Content-Type: application/json
+
+### Eliminando un clientes
+DELETE http://localhost:3000/clientes/1|
+
+///////////////////////////////////////////////////////////////////////////////////
+
+// Detalle venta
+### Consultando todos los detalle venta general
+GET http://localhost:3000/detalleVenta
+
+###consultando todos los productos de una venta
+GET http://localhost:3000/detalleVenta/1
+
+### Insertando detalle venta
+POST http://localhost:3000/detalleVenta
+Content-Type: application/json
+
+### Actualizando un detalle venta
+PUT http://localhost:3000/detalleVenta/
+Content-Type: application/json
+
+### Eliminando un detalle venta
+DELETE http://localhost:3000/detalleVenta/1
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
+// Detalle Usuarios
+### Consultando todos los usuarios
+GET http://localhost:3000/usuarios
+
+### Consultando todos los usuarios por id
+GET http://localhost:3000/usuarios/1
+
+### Insertando usuarios
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+### Actualizando un usuarios
+PUT http://localhost:3000/usuarios/
+Content-Type: application/json
+
+### Eliminando un usuarios
+DELETE http://localhost:3000/usuario/1
+
+
+///////////////////////////////////////////////////////////////////////////////////
+
+//Facturas
+### Consultando todas las facturas
+GET http://localhost:3000/factura
+
+### Consultando una factura
+GET http://localhost:3000/productos/1
+
+### Insertando una factura
+POST http://localhost:3000/productos
+Content-Type: application/json
+
+ {   
+    "descripcion": "Caballitos sabor piña 750ml",
+    "id_proveedor": 1,
+    "id_categoria": 3,
+    "precio_unit": 17,
+    "existencias": 120,
+    "stock_minimo": 20
+  }
+
+### Actualizando una factura
+PUT http://localhost:3000/productos/6
+Content-Type: application/json
+
+{   
+    "descripcion": "Caballitos sabor piña 750ml",
+    "id_proveedor": 1,
+    "id_categoria": 3,
+    "precio_unit": 20,
+    "existencias": 100,
+    "stock_minimo": 20
+  }
+
+### Eliminando una factura
+DELETE http://localhost:3000/productos/1
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+//Productos
+### Consultando todos los productos
+GET http://localhost:3000/productos
+
+### Consultando un producto
+GET http://localhost:3000/productos/1
+
+### Insertando un producto
+POST http://localhost:3000/productos
+Content-Type: application/json
+
+ {   
+    "descripcion": "Caballitos sabor fresa 950ml",
+    "id_proveedor": 1,
+    "id_categoria": 3,
+    "precio_unit": 19,
+    "existencias": 110,
+    "stock_minimo": 10
+  }
+
+### Actualizando un producto
+PUT http://localhost:3000/productos/9
+Content-Type: application/json
+
+{   
+    "descripcion": "Caballitos sabor piña 750ml",
+    "id_proveedor": 1,
+    "id_categoria": 3,
+    "precio_unit": 20,
+    "existencias": 100,
+    "stock_minimo": 20
+  }
+
+### Eliminando un producto
+DELETE http://localhost:3000/productos/8
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+//Proveedores
+### Consultando todos los proveedores
+GET http://localhost:3000/proveedores
+
+### Consultando un proveedores
+GET http://localhost:3000/proveedores/4
+
+### Insertando un proveedores
+POST http://localhost:3000/proveedores
+Content-Type: application/json
+
+ {   
+   //"descripcion": "Caballitos sabor piña 750ml",
+    //"id_proveedor": 1,
+    //"id_categoria": 3,
+    //"precio_unit": 17,
+    //"existencias": 120,
+    //"stock_minimo": 20,
+    
+    "id_proovedor": 7,
+    "proveedor": "prueba 7",
+    "telefono": "4181104580",
+    "correo": "pruebaa7@gmail.com"
+  }
+
+### Actualizando un proveedores
+PUT http://localhost:3000/proveedores/4
+Content-Type: application/json
+
+{   
+ "id_proovedor": 4,
+    "proveedor": "Doña Lolita",
+    "telefono": "4181104547",
+    "correo": "loladoña@gmail.com"
+  }
+
+### Eliminando un proveedores
+DELETE http://localhost:3000/proveedores/7
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+//Tipos
+### Consultando todos los tipos
+GET http://localhost:3000/tipos
+
+### Consultando un tipo
+GET http://localhost:3000/tipos/1
+
+### Insertando un tipo
+###POST http://localhost:3000/tipos
+###Content-Type: application/json
+
+ ###{   
+   ### "descripcion": "Caballitos sabor piña 750ml",
+    ###"id_proveedor": 1,
+    ###"id_categoria": 3,
+    ###"precio_unit": 17,
+    ###"existencias": 120,
+    ###"stock_minimo": 20
+  ###}
+
+### Actualizando un tipos
+###PUT http://localhost:3000/tipos/6
+###Content-Type: application/json
+
+###{   
+   ### "descripcion": "Caballitos sabor piña 750ml",
+    ###"id_proveedor": 1,
+    ###"id_categoria": 3,
+    ###"precio_unit": 20,
+    ###"existencias": 100,
+    ###"stock_minimo": 20
+  ###}
+
+### Eliminando un tipo
+###DELETE http://localhost:3000/tipos/1
+
+///////////////////////////////////////////////////////////////////////////////////
+
+//USUARIOS
+### Consultando todos los usuarios
+GET http://localhost:3000/usuarios
+
+### Consultando un usuario
+GET http://localhost:3000/usuarios/2
+
+### Insertando un usuario
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+ {   
+    "id_usuario": 3,
+    "nombre": "marcos ",
+    "id_tipo": 2,
+    "pwd": "te"
+  }
+
+### Actualizando un usuario
+PUT http://localhost:3000/usuarios/2
+Content-Type: application/json
+
+
+### Eliminando un ususario
+DELETE http://localhost:3000/usuarios/1
+
+///////////////////////////////////////////////////////////////////////////////////
+     
+##VENTAS
+
+### Consultando todas los VENTAS
+GET http://localhost:3000/ventas
+
+### Consultando un VENTAS
+GET http://localhost:3000/ventas/1
+
+### Insertando un VENTAS
+POST http://localhost:3000/ventas
+Content-Type: application/json
+
+### Actualizando un VENTAS
+PUT http://localhost:3000/ventas/6
+Content-Type: application/json
+
+### Eliminando un VENTAS
+DELETE http://localhost:3000/ventas/1

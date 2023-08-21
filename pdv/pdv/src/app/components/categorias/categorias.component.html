@@ -1,0 +1,23 @@
+<!-- categorias.component.html -->
+<h2>Formulario de Categoria</h2>
+<br>
+<form (submit)="agregarCategoria()">
+  <label for="categoria">Nueva Categoria:</label>
+  <input type="text" id="categoria" [(ngModel)]="categoria.categoria" name="categoria"><br>
+  <button type="submit">Agregar Categoria</button>
+</form>
+
+<table>
+  <tr>
+    <th>ID</th>
+      <th>Categoría</th>
+      <th>Acciones</th>
+  </tr>
+  <tr *ngFor="let categoria of categorias">
+    <td>{{ categoria.id_categoria }}</td>
+      <td>{{ categoria.categoria }}</td>
+    <td>
+      <button class="btn btn-primary" (click)="eliminarCategoria(categoria.id_categoria)">Eliminar</button>
+    </td>
+  </tr>
+</table>

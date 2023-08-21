@@ -1,0 +1,43 @@
+<h2>Formulario de Cliente</h2>
+<br>
+<form (submit)="agregarCliente()">
+  <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" [(ngModel)]="cliente.nom_cliente" name="nombre">
+
+      <label for="rfc" class="form-label">RFC</label>
+      <input type="text" class="form-control" id="rfc" [(ngModel)]="cliente.rfc" name="rfc">
+
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input type="text" class="form-control" id="telefono" [(ngModel)]="cliente.telefono" name="telefono">
+
+      <label for="correo" class="form-label">Correo</label>
+      <input type="email" class="form-control" id="correo" [(ngModel)]="cliente.correo" name="correo">
+
+  
+
+  <button type="submit">Agregar Cliente</button>
+</form>
+
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>RFC</th>
+    <th>Teléfono</th>
+    <th>Correo</th>
+    <th>Acciones</th>
+  </tr>
+  <tr *ngFor="let cliente of clientes">
+    <td>{{ cliente.id_cliente }}</td>
+        <td>{{ cliente.nom_cliente }}</td>
+        <td>{{ cliente.rfc }}</td>
+        <td>{{ cliente.telefono }}</td>
+        <td>{{ cliente.correo }}</td>
+    <td>
+      <button class="btn btn-info" (click)="actualizarCliente(cliente.id_cliente)">Actualizar</button>
+          <button class="btn btn-danger" (click)="eliminarCliente(cliente.id_cliente)">Eliminar</button>
+
+    </td>
+  </tr>
+</table>
